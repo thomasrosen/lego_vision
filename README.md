@@ -5,7 +5,7 @@
 This uses `gpt4-vision` to generate a prompt for `DALL·E 3`.
 The resulting image should be in the style of the LEGO movie.
 
-**🎈 This is inpsiered by [@jh3yy's](https://twitter.com/jh3yy) tweet: (https://twitter.com/jh3yy/status/1730596577067122956).**
+**🎈 This is inpsiered by [@jh3yy's](https://twitter.com/jh3yy) tweet: <https://twitter.com/jh3yy/status/1730596577067122956>.**
 
 ## One example
 
@@ -38,11 +38,11 @@ In the `gen_image.js` file you only need to edit the `main`-function. (You can o
 You can use the `image_url` if the image is hosted somewhere. Otherwise use the `image_path` to define a relative path.
 
 ```javascript
-  const new_image_url = await the_chain({
-    image_path: './path_to_the_image.jpg',
-    image_url: 'https://url.to/the_image.jpg',
-    additional_info: 'The age of the person or other important info.' // leave empty if not needed
-  })
+const new_image_url = await the_chain({
+  image_path: './path_to_the_image.jpg',
+  image_url: 'https://url.to/the_image.jpg',
+  additional_info: 'The age of the person or other important info.', // leave empty if not needed
+})
 ```
 
 ## 4. run the script
