@@ -5,6 +5,8 @@
 This uses `gpt4-vision` to generate a prompt for `DALL·E 3`.
 The resulting image should be in the style of the LEGO movie.
 
+**🎈 This is inpsiered by [@jh3yy's](https://twitter.com/jh3yy) tweet: (https://twitter.com/jh3yy/status/1730596577067122956).**
+
 ## One example
 
 More examples are below.
