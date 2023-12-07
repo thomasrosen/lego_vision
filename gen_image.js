@@ -3,6 +3,32 @@ import fs from 'fs';
 import mime from 'mime-types';
 import OpenAI from 'openai';
 
+async function main() {
+
+  // IF you want to provide an image via a local file:
+
+  // const new_image_url = await the_chain({
+  //   image_path: './path_to_the_image.jpg',
+  //   additional_info: 'The age or other info important to the image.'
+  // })
+
+
+
+  // OR IF you want provide an image via a URL:
+
+  const new_image_url = await the_chain({
+    image_url: 'https://pbs.twimg.com/profile_images/1649014378425982977/AgEzfZjB_400x400.jpg',
+    additional_info: 'The person in the image is 26 years old.'
+  })
+
+}
+
+
+
+// ALL OTHER FUNCTIONS ARE BELOW
+
+
+
 const openai = new OpenAI({
   apiKey: process.env["OPENAI_API_KEY"]
 });
@@ -94,25 +120,34 @@ async function genImage({ prompt }) {
   return image_url;
 }
 
-async function main() {
-  let imagepath = undefined
-  let additional_info = undefined
+async function the_chain({
+  image_path = undefined,
+  image_url = undefined,
+  additional_info = '',
+}) {
+  console.log('✨ BUILDING THE LEGO...')
+  console.log('✨ THIS WILL TAKE A FEW SECONDS...')
 
-  imagepath = './path_to_the_image.jpg';
-  additional_info = 'The age or other info important to the image.'
+  let datauriOfTheImage = undefined
 
-  const datauriOfTheImage = await readImageAndConvertToBase64(imagepath);
-
-  // const datauriOfTheImage = 'https://pbs.twimg.com/profile_images/1649014378425982977/AgEzfZjB_400x400.jpg';
-  // additional_info = 'The age of the person is 26 years.'
+  if (image_path) {
+    readImageAndConvertToBase64(image_path)
+  } else if (image_url) {
+    datauriOfTheImage = image_url
+  } else {
+    throw new Error('image_path or image_url is required');
+  }
 
   const prompt = await genLegoPrompt({
     image_url: datauriOfTheImage,
     additional_info,
   });
-  console.log('\n', prompt)
+  console.log('\n', '✨ THE GENERATED PROMPT:\n', prompt)
 
   const imageURL = await genImage({ prompt });
-  console.log('\n', imageURL, '\n');
+  console.log('\n', '✨ THE LEGO IMAGE CAN BE DOWNLOADED HERE:\n', imageURL, '\n');
+
+  return imageURL;
 }
+
 main();
