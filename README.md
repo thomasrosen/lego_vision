@@ -1,6 +1,9 @@
 # LEGO Vision
 
-This uses `gpt4-vision` to generate a prompt for `DALL·E 3` to generate an image in the style of the LEGO movie.
+Generate LEGO like looking images with gpt4-vision and DALL·E 3.
+
+This uses `gpt4-vision` to generate a prompt for `DALL·E 3`.
+The resulting image should be in the style of the LEGO movie.
 
 ## One example
 
