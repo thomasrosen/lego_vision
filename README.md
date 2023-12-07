@@ -1,6 +1,6 @@
 # LEGO Vision
 
-This uses `gpt4-vision` to generate a prompt for `dall-e3` to generate an image in the style of the LEGO movie.
+This uses `gpt4-vision` to generate a prompt for `DALL·E 3` to generate an image in the style of the LEGO movie.
 
 ## One example
 
@@ -11,6 +11,12 @@ More examples are below.
 ## 1. add your own API key
 
 You need to add your own [OpenAI API key](https://beta.openai.com/docs/developer-quickstart/overview) to a `.env`-file. There is an `example.env`-file for help with naming.
+
+The `.env`-file should look like this:
+
+```bash
+OPENAI_API_KEY="sk-xxxxxx"
+```
 
 ## 2. install dependencies
 
@@ -36,7 +42,7 @@ You can use the `image_url` if the image is hosted somewhere. Otherwise use the 
 
 ## 4. run the script
 
-Running the script can take a few seeconds. It will print out the prompt it send so Dalle3 and the final image url to download the image.
+Running the script can take a few seeconds. It will print out the prompt it send so DALL·E 3 and the final image url to download the image.
 
 ```bash
 node gen_image.js
