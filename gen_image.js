@@ -98,41 +98,8 @@ async function main() {
   let imagepath = undefined
   let additional_info = undefined
 
-  // imagepath = './images/stmm-lego2.jpg';
-  // additional_info = 'Im Bild werden Lego Packete an das Krankenhauspersonal übergeben. Die Lego Packete sind für die Kinder im Krankenhaus. Die Personen im weißen Tshirt sind keine Ärzte, sondern die Spender! DIE LEGO PACKETE SIND WICHTIG.'
-
-  // imagepath = './images/fam_xmas.jpg';
-  // additional_info = 'There is a xmas-tree in the background. The foreground is a family. Son is 26. Parents are around 60. The father has his hand around the mother. The mother is in the middle. Make it look like a selfie.'
-
-  // imagepath = './images/stefan_strand.jpg';
-  // additional_info = 'The man is wearing a cap.'
-
-  // imagepath = './images/uta_und_stefan_zoomed.jpg';
-  // additional_info = 'MAKE IT LOOK LIKE A SELFIE!'
-
-  // imagepath = './images/thomas_MAX_0854.jpg';
-  // additional_info = 'The person is 26 years old. THE PERSON HAS NO BEARD. He looks straight into the camera. The background is blurred. He is happy.'
-
-  // imagepath = './images/IMG_1404.jpg';
-  // additional_info = 'The person is 26 years old. THE PERSON HAS NO BEARD. The background is blurred. He is happy. Wide angle shot from below. 45 degree angle.'
-
-  // imagepath = './images/IMG_1207.jpg';
-  // additional_info = 'Two guys kissing. The people are in their twenties. They wear purple clothing. The left person has brown hair with a dark green cap. The right person has blond hair. Dont print text.'
-
-  // imagepath = './images/sam_2c22d11c-15f9-4410-92aa-067f903e3fe0.JPG';
-  // additional_info = 'There are four people in this group shot. Be precise. One boy is on his phone. The others are looking into the camera.'
-
-  // imagepath = './images/sam_b6f37d9d-4117-4fa0-88ee-db50a571b8da.JPG';
-  // additional_info = 'make this a wide angle shot. the scarf needs to look like LEGO. Include the wall, ther person is leaning on. IT MUST LOOK LIKE A SCENE FROM THE LEEGO MOVIE.'
-
-  // imagepath = './images/IMG_1302.jpeg';
-  // additional_info = 'It is IMPORTANT that the person is sitting in the corner. The person looks a bit shocked but very cute.'
-
-  imagepath = './IMG_1305.jpg';
-  additional_info = 'The person is sad, cause it is cold in Berlin.'
-
-  imagepath = './images/IMG_1367.jpg';
-  additional_info = 'The photo is in black in white. The lego photo should also be in black and white. The neckless and hairstyle are important.'
+  imagepath = './path_to_the_image.jpg';
+  additional_info = 'The age or other info important to the image.'
 
   const datauriOfTheImage = await readImageAndConvertToBase64(imagepath);
 
@@ -145,7 +112,6 @@ async function main() {
   });
   console.log('\n', prompt)
 
-  // const prompt = 'Create an image in the style of a LEGO character from \"The LEGO Movie\", representing a young adult male with fair skin and light brown/blondish hair, smiling contentedly with his eyes gently closed. He should be dressed in a horizontally striped light and dark grey t-shirt. The LEGO character is holding a slice of watermelon to his mouth, appearing to take a bite with juice visible on the lips of the LEGO figure. The setting is outdoors, with a blurred natural green backdrop suggestive of foliage. The image should be rendered with vibrant colors and crisp plastic textures characteristic of LEGO, at a high resolution to capture the intricate details of the LEGO world.'
   const imageURL = await genImage({ prompt });
   console.log('\n', imageURL, '\n');
 }
